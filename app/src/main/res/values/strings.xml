@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TercerExamen</string>
+    <string name="title_book">Titulo:</string>
+    <string name="pages_book">Paginas:</string>
+    <string name="description_book">Descripcion:</string>
+    <string name="date_book">Fecha:</string>
+    <string name="author_book">Autor:</string>
+    <string name="isbn">Isbn:</string>
+</resources>
