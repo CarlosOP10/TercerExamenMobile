@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+//        fun refreshActivity(){
+//            val refresh: Intent   = Intent(this,MainActivity::class.java);
+//            startActivity(refresh)
+//        }
         GlobalScope.launch {
             val bookDao = AppRoomDatabase.getDatabase(applicationContext).bookDato()
             val repository = BookRepository(bookDao)
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             adLayoutManager.orientation= LinearLayoutManager.VERTICAL
 
             bookRecyclerView.layoutManager=adLayoutManager
-            bookRecyclerView.adapter=BookListRv(list,applicationContext)
+            bookRecyclerView.adapter=BookListRv(list,applicationContext )
         }
         addBook.setOnClickListener {
             val intent: Intent = Intent (this, AddBookActivity::class.java)

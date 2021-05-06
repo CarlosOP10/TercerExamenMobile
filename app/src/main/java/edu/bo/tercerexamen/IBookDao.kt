@@ -1,9 +1,6 @@
 package edu.bo.tercerexamen
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface IBookDao {
@@ -16,4 +13,10 @@ interface IBookDao {
 
     @Query("DELETE FROM book_table")
     suspend fun deleteAll()
+
+    @Delete
+    fun deleteBook( book: Book)
+
+    @Update
+    fun updateBook(book: Book)
 }
