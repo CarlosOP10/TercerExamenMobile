@@ -19,4 +19,8 @@ interface IBookDao {
 
     @Update
     fun updateBook(book: Book)
+
+    @Query("SELECT * FROM book_table WHERE id LIKE :id LIMIT 1")
+    fun findById(id: String): Book
+
 }

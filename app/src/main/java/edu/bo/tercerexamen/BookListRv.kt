@@ -3,6 +3,8 @@ package edu.bo.tercerexamen
 import android.content.Context
 import android.content.Intent
 import android.content.Intent.getIntent
+import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +42,16 @@ class BookListRv(val list: List<Book>, val applicationContext: Context) : Recycl
             val intent = Intent( context, MainActivity::class.java)
             context.startActivity(intent)
         }
+        holder.itemView.editButton.setOnClickListener {
 
+            val context=holder.itemView.context
+            val intent = Intent( context, EditBookActivity::class.java)
+            var bundle: Bundle= Bundle()
+            var atributes: Array<String> = arrayOf(book.id.toString(),book.title, book.author,book.isbn,book.date,book.photoUrl,book.description,book.pages.toString())
+            bundle.putStringArray("book",atributes)
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

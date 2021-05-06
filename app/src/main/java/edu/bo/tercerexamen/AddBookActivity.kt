@@ -3,11 +3,7 @@ package edu.bo.tercerexamen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_add_book.*
-import kotlinx.android.synthetic.main.activity_add_book.view.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -16,11 +12,11 @@ class AddBookActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_book)
 
-        btnCancelAdd.setOnClickListener {
+        btnCancelEdit.setOnClickListener {
             onBackPressed()
         }
 
-        btnAddBook.setOnClickListener {
+        btnEditBook.setOnClickListener {
             var title=txtAddTitle.text.toString()
             var author=txtAddAuthor.text.toString()
             var date=txtAddDate.text.toString()

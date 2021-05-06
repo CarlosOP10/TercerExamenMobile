@@ -17,4 +17,8 @@ class BookRepository(private val bookDao: IBookDao) {
     fun uptateBook(book: Book){
         bookDao.updateBook(book)
     }
+
+    fun findById(id:String): Book{
+        return bookDao.findById(id)
+    }
 }

@@ -13,10 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        fun refreshActivity(){
-//            val refresh: Intent   = Intent(this,MainActivity::class.java);
-//            startActivity(refresh)
-//        }
+
         GlobalScope.launch {
             val bookDao = AppRoomDatabase.getDatabase(applicationContext).bookDato()
             val repository = BookRepository(bookDao)
