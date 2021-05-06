@@ -23,6 +23,7 @@ class BookListRv(val list: List<Book>, val applicationContext: Context?) : Recyc
         holder.itemView.dateBook.text=book.date
         holder.itemView.isbnBook.text=book.isbn
         Picasso.get().load(book.photoUrl).into(holder.itemView.imageBook)
+
     }
 
     override fun getItemCount(): Int {

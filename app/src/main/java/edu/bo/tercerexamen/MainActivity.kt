@@ -1,5 +1,6 @@
 package edu.bo.tercerexamen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
 
             bookRecyclerView.layoutManager=adLayoutManager
             bookRecyclerView.adapter=BookListRv(list,applicationContext)
+        }
+        addBook.setOnClickListener {
+            val intent: Intent = Intent (this, AddBookActivity::class.java)
+            startActivity(intent)
         }
     }
 }
